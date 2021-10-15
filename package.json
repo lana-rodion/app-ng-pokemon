@@ -1,0 +1,51 @@
+{
+  "name": "app-ng-pokemon",
+  "version": "1.0.0",
+  "description": "An awesome application to handle some pokemons.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p src/",
+    "build:watch": "tsc -p src/ -w",
+    "serve": "lite-server -c=bs-config.json",
+    "prestart": "npm run build",
+    "start": "concurrently \"npm run build:watch\" \"npm run serve\""
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lana-rodion/app-ng-pokemon.git"
+  },
+  "keywords": [
+    "angular",
+    "learning",
+    "application"
+  ],
+  "author": "Lana Rodion",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lana-rodion/app-ng-pokemon/issues"
+  },
+  "homepage": "https://github.com/lana-rodion/app-ng-pokemon#readme",
+  "dependencies": {
+    "@angular/animations": "^12.2.10",
+    "@angular/common": "^12.2.10",
+    "@angular/compiler": "^12.2.10",
+    "@angular/core": "^12.2.10",
+    "@angular/forms": "^12.2.10",
+    "@angular/platform-browser": "^12.2.10",
+    "@angular/platform-browser-dynamic": "^12.2.10",
+    "@angular/router": "^12.2.10",
+    "concurrently": "^6.3.0",
+    "core-js": "^3.18.3",
+    "rxjs": "^7.4.0",
+    "rxjs-compat": "^6.6.7",
+    "systemjs": "^6.10.3",
+    "typescript": "^4.4.4",
+    "zone.js": "^0.11.4"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0",
+    "lite-server": "^2.6.1"
+  }
+}
