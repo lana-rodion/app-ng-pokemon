@@ -14,22 +14,12 @@ var AppComponent = /** @class */ (function () {
         this.pokemons = null;
         //Angular récupére la valeur de title et l'injecte dans app.component.html <h1>{{ title }}</h1>
         this.title = 'Pokémons';
-        this.value = '';
+        this.values = '';
     }
     //la méthode ngOnInit, et permet de définir un comportement 
     //lorsque le composant est initialisé
     AppComponent.prototype.ngOnInit = function () {
         this.pokemons = mock_pokemons_1.POKEMONS; //constante from './mock-pokemons';
-    };
-    AppComponent.prototype.onClick = function () {
-        console.log("Bouton a été cliqué !");
-    };
-    /* onKey(event: KeyboardEvent) {
-        this.value = 'Bonjour ' + (<HTMLInputElement>event.target).value;
-    } */
-    //Sans event, mais avec une variable référencée
-    AppComponent.prototype.onKey = function (value) {
-        this.value = 'Bonjour ' + value;
     };
     //parametre est un objet pokemon de type Pokemon
     AppComponent.prototype.selectPokemon = function (pokemon) {
