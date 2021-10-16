@@ -4,6 +4,10 @@
   </div>
 </nav>
 <h1>{{ title }}</h1>
-<!-- Display the DOM element under the condition  -->
-<p *ngIf="age > 18">Ceci est un message destiné aux personnes majeures</p>
+
+<!-- Display the DOM element with loop from Array -->
+<ul>
+    <li *ngFor="let pokemon of pokemons">{{ pokemon.name }}</li>
+</ul>
+
 <!-- <router-outlet></router-outlet> -->
