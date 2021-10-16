@@ -3,11 +3,25 @@
     <a href="#" class="brand-logo center">Application de Pokémons</a>
   </div>
 </nav>
-<h1>{{ title }}</h1>
 
-<!-- Display the DOM element with loop from Array -->
-<ul>
-    <li *ngFor="let pokemon of pokemons">{{ pokemon.name }}</li>
-</ul>
+<h1 class='center'>{{ title }}</h1>
+
+<div class='container'>
+    <div class="row">
+        <div *ngFor='let pokemon of pokemons' class="col s6 m4">
+            <div class="card horizontal" (click)="selectPokemon(pokemon)">
+                <div class="card-image">
+                    <img [src]="pokemon.picture">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{ pokemon.name }}</p>
+                        <p><small>{{ pokemon.created }}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- <router-outlet></router-outlet> -->
