@@ -3,5 +3,18 @@
     <a href="#" class="brand-logo center">Application de Pokémons</a>
   </div>
 </nav>
+<h1>{{ title }}</h1>
+<ul>
+    <li>Bulbizarre</li>
+    <li>Salamèche</li>
+    <li>Carapuce</li>
+</ul>
+<button (click)="onClick()">Cliquer ici !</button>
 
-<router-outlet></router-outlet>
+<input #box (keyup)="onKey(box.value)" placeholder="Écriver ici ce que vous voulez..."/>
+<!-- Affiche que la valeur de la variable locale -->
+<p>{{ box.value }}</p>
+<!-- Affiche la valeur de this.value = 'Bonjour ' + value; après l'exécution de la méthode onKey(value: string) -->
+<p>{{ value }}</p>
+
+<!-- <router-outlet></router-outlet> -->
