@@ -9,11 +9,9 @@ import { POKEMONS } from './mock-pokemons';
 export class AppComponent implements OnInit { 
 
     private pokemons: Pokemon[] = null;
-
     //Angular récupére la valeur de title et l'injecte dans app.component.html <h1>{{ title }}</h1>
     private title: string = 'Pokémons';
-    values = '';
-
+    age = 20;
     //la méthode ngOnInit, et permet de définir un comportement 
     //lorsque le composant est initialisé
     ngOnInit() {

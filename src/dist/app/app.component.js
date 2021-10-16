@@ -14,7 +14,7 @@ var AppComponent = /** @class */ (function () {
         this.pokemons = null;
         //Angular récupére la valeur de title et l'injecte dans app.component.html <h1>{{ title }}</h1>
         this.title = 'Pokémons';
-        this.values = '';
+        this.age = 20;
     }
     //la méthode ngOnInit, et permet de définir un comportement 
     //lorsque le composant est initialisé

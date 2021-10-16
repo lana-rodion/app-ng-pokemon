@@ -4,9 +4,6 @@
   </div>
 </nav>
 <h1>{{ title }}</h1>
-<!-- Listen the event on the Enter key -->
-<input #box (keyup.enter)="values=box.value" (blur)="values=box.value">
-<!-- display values property if the user pressed on the Enter -->
-<p>{{ values }}</p>
-
+<!-- Display the DOM element under the condition  -->
+<p *ngIf="age > 18">Ceci est un message destiné aux personnes majeures</p>
 <!-- <router-outlet></router-outlet> -->
