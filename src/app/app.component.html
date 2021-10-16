@@ -5,7 +5,7 @@
 </nav>
 <h1>{{ title }}</h1>
 <!-- Listen the event on the Enter key -->
-<input #box (keyup.enter)="values=box.value">
+<input #box (keyup.enter)="values=box.value" (blur)="values=box.value">
 <!-- display values property if the user pressed on the Enter -->
 <p>{{ values }}</p>
 
