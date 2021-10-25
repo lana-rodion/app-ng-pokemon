@@ -27,7 +27,7 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent,
                 page_not_found_component_1.PageNotFoundComponent
             ],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
         })
     ], AppModule);
     return AppModule;

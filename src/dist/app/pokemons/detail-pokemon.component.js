@@ -19,19 +19,16 @@ var DetailPokemonComponent = /** @class */ (function () {
     function DetailPokemonComponent(route, router) {
         this.route = route;
         this.router = router;
+        // On supprime la liste car on n'a pas besoin de stocker tous les pokemons
         this.pokemons = null; //liste de tous les pokemons
         this.pokemon = null; // pokemon à afficher
     }
     // void = cette méthode n'a pas d'une valeur de retour, elle renvoie rien
     DetailPokemonComponent.prototype.ngOnInit = function () {
-        //on récupére tous les pokemons d'application
         this.pokemons = mock_pokemons_1.POKEMONS;
-        //récupére tous les paramètres de la route associé au composant
-        //la propriété snapshot = permet de récupérer de façon synchronne
+        // la propriété snapshot = permet de récupérer de façon synchronne
         // l'exécution du programme est bloquée tant qu'on n'a pas de "id" à afficher 
         var id = +this.route.snapshot.paramMap.get('id');
-        // boucle for pour trouver le pokemon selon son "id" défini dans let id :
-        // let id = +this.route.snapshot.paramMap.get('id');
         for (var i = 0; i < this.pokemons.length; i++) {
             if (this.pokemons[i].id == id) {
                 this.pokemon = this.pokemons[i];

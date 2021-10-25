@@ -16,6 +16,6 @@ import { PageNotFoundComponent } from './page-not-found.component';
         AppComponent,
         PageNotFoundComponent
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule { }
