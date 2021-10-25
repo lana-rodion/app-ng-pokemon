@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Pokemon } from './pokemon';
   
 /*
  * Affiche la couleur correspondant au type du pokémon.
