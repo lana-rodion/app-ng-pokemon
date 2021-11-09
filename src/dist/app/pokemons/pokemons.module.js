@@ -15,6 +15,8 @@ var detail_pokemon_component_1 = require("./detail-pokemon.component");
 var border_card_directive_1 = require("./border-card.directive");
 var pokemon_type_color_pipe_1 = require("./pokemon-type-color.pipe");
 var pokemons_service_1 = require("./pokemons.service");
+// providers: un tableau de classes 
+// qui permettent de fournir un service au module
 var PokemonsModule = /** @class */ (function () {
     function PokemonsModule() {
     }

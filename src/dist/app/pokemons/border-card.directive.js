@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BorderCardDirective = void 0;
 var core_1 = require("@angular/core");
+// class Directive est utilisée avec le décorateur @Directive
+// ElementRef représente un élément du DOM
 var BorderCardDirective = /** @class */ (function () {
     function BorderCardDirective(el) {
         this.el = el;
@@ -20,6 +22,7 @@ var BorderCardDirective = /** @class */ (function () {
         this.setBorder(this.initialColor);
         this.setHeight(this.defaultHeight);
     }
+    // @HostListener permet lier la méthode de Directive à un event donné 
     BorderCardDirective.prototype.onMouseEnter = function () {
         this.setBorder(this.borderColor || this.defaultColor);
     };
@@ -53,7 +56,7 @@ var BorderCardDirective = /** @class */ (function () {
         (0, core_1.Directive)({
             selector: '[pkmnBorderCard]'
         })
-        //selector: '[pkmnBorderCard]' => la Directive s'applique 
+        //selector avec l'attribut '[pkmnBorderCard]' => la Directive s'applique 
         //à tous les éléments du DOM avec l'attribut pkmnBorderCard
         ,
         __metadata("design:paramtypes", [core_1.ElementRef])

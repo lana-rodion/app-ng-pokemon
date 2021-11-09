@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PageNotFoundComponent = void 0;
 var core_1 = require("@angular/core");
+// <a routerLink="/pokemons" ...></a> permet à redriger vers la page d'acceuil /pokemons
 var PageNotFoundComponent = /** @class */ (function () {
     function PageNotFoundComponent() {
     }

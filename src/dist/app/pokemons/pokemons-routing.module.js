@@ -32,4 +32,17 @@ var PokemonRoutingModule = /** @class */ (function () {
     return PokemonRoutingModule;
 }());
 exports.PokemonRoutingModule = PokemonRoutingModule;
+/**
+ * On utilise dans le module racine app-routing.module.ts
+ * la méthode global forRoot(param), elle est réservée au module racine
+ * imports: [
+        RouterModule.forRoot(const)
+    ], ...
+ * Pour les modules fils on utilise la méthode de la classe RouterModule
+ * forChild(const) qui permet d'enregistrer
+ * des routes additionnelles par rapport au module racine :
+ * imports: [
+        RouterModule.forChild(pokemonsRoutes)
+    ], ...
+*/ 
 //# sourceMappingURL=pokemons-routing.module.js.map
