@@ -1,9 +1,11 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+// class Directive est utilisée avec le décorateur @Directive
+// ElementRef représente un élément du DOM
 
 @Directive({
     selector: '[pkmnBorderCard]'
   })
-  //selector: '[pkmnBorderCard]' => la Directive s'applique 
+  //selector avec l'attribut '[pkmnBorderCard]' => la Directive s'applique 
   //à tous les éléments du DOM avec l'attribut pkmnBorderCard
 
   export class BorderCardDirective {
@@ -19,6 +21,8 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
     @Input('pkmnBorderCard') borderColor: string; //alias
 
+    // @HostListener permet lier la méthode de Directive à un event donné 
+    
     @HostListener('mouseenter') onMouseEnter() {
         this.setBorder(this.borderColor || this.defaultColor);
     }
