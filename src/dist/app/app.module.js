@@ -13,6 +13,10 @@ var app_routing_module_1 = require("./app-routing.module");
 var pokemons_module_1 = require("./pokemons/pokemons.module");
 var app_component_1 = require("./app.component");
 var page_not_found_component_1 = require("./page-not-found.component");
+// Chaque Module a un décorateur @NgModule
+// imports: un tableau des classes importées d'autres modules et
+// nécessaires au fonctionnement du Module
+// declaration: un tableau des classes de vues ou templates : Component, Directive, Pipe
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }

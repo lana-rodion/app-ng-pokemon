@@ -7,6 +7,9 @@ import { DetailPokemonComponent } from './detail-pokemon.component';
 import { BorderCardDirective } from './border-card.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { PokemonsService } from './pokemons.service';
+
+// providers: un tableau de classes 
+// qui permettent de fournir un service au module
   
 @NgModule({
     imports: [

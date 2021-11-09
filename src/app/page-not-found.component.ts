@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+// <a routerLink="/pokemons" ...></a> permet à redriger vers la page d'acceuil /pokemons
   
 @Component({
     selector: 'page-404',

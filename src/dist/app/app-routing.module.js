@@ -10,6 +10,9 @@ exports.AppRoutingModule = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var page_not_found_component_1 = require("./page-not-found.component");
+// Par defaut, le Router d'application n'a pas des routes jusqu'à on le configure
+// path: '**' pour intercepter toutes les routes non prise en charge par l'application 
+// et les envoyer vers PageNotFoundComponent
 var appRoutes = [
     { path: '', redirectTo: 'pokemons', pathMatch: 'full' },
     { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
