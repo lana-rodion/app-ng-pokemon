@@ -8,7 +8,7 @@ import { PokemonsService } from './pokemons.service';
 @Component({
     selector: 'detail-pokemon',
     templateUrl: './app/pokemons/detail-pokemon.component.html',
-    providers: [PokemonsService]
+    //providers: [PokemonsService]
 })
 export class DetailPokemonComponent implements OnInit {
     // On supprime la liste car on utilisera le PokemonsService pour récupérer tous les pokemons
