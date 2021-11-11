@@ -41,4 +41,10 @@ export class DetailPokemonComponent implements OnInit {
     goBack(): void {
         this.router.navigate(['/pokemons']);
     }
+
+    // méthode goEdit definit la rédirection vers URL ['/pokemons/edit/:id']
+    goEdit(pokemon: Pokemon): void {
+        let link = ['pokemon/edit', pokemon.id];
+        this.router.navigate(link);
+    }
 }

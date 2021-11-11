@@ -43,6 +43,11 @@ var DetailPokemonComponent = /** @class */ (function () {
     DetailPokemonComponent.prototype.goBack = function () {
         this.router.navigate(['/pokemons']);
     };
+    // méthode goEdit definit la rédirection vers URL ['/pokemons/edit/:id']
+    DetailPokemonComponent.prototype.goEdit = function (pokemon) {
+        var link = ['pokemon/edit', pokemon.id];
+        this.router.navigate(link);
+    };
     DetailPokemonComponent = __decorate([
         (0, core_1.Component)({
             selector: 'detail-pokemon',

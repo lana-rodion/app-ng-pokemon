@@ -16,10 +16,7 @@
 					#name="ngModel"
 					/>
 
-					<div
-						[hidden]="name.valid || name.pristine"
-						class="card-panel red accent-1"
-					>
+					<div [hidden]="name.valid || name.pristine" class="card-panel red accent-1">
 						Le nom du pokémon est requis (1-25).
 					</div>
 				</div>
@@ -37,10 +34,7 @@
 						name="hp"
 						#hp="ngModel"
 					/>
-					<div
-						[hidden]="hp.valid || hp.pristine"
-						class="card-panel red accent-1"
-					>
+					<div [hidden]="hp.valid || hp.pristine" class="card-panel red accent-1">
 						Les points de vie du pokémon sont compris entre 0 et 999.
 					</div>
 				</div>
@@ -58,10 +52,7 @@
 						name="cp"
 						#cp="ngModel"
 					/>
-					<div
-						[hidden]="cp.valid || cp.pristine"
-						class="card-panel red accent-1"
-					>
+					<div [hidden]="cp.valid || cp.pristine" class="card-panel red accent-1">
 						Les dégâts du pokémon sont compris entre 0 et 99.
 					</div>
 				</div>
@@ -69,8 +60,8 @@
 				<!-- Pokemon types -->
 				<form class="form-group">
 					<label for="types">Types</label>
-						<!-- *ngFor pour créer une liste des checkbox associées aux types -->
-						<!-- Chaque fois que la case est cochée ou décochée, on déclanche un appel 
+						<!-- *ngFor pour créer une liste des checkbox associées aux types. 
+                            Chaque fois que la case est cochée ou décochée, on déclanche un appel 
 							à la méthode selectType avec type, enfin de reajuster le model côté composant
 							(change)="selectType($event, type)"
 						-->
@@ -98,7 +89,7 @@
 				<div class="divider"></div>
 				<div class="section center">
 					<!-- La liaison de la propriété [disabled] 
-							est utilisée pour désactiver le bouton si le formulaire est invalid 
+                        est utilisée pour désactiver le bouton si le formulaire est invalid 
 					-->
 					<button
 						type="submit"
