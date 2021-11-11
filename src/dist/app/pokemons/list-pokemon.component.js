@@ -13,9 +13,31 @@ exports.ListPokemonComponent = void 0;
 var core_1 = require("@angular/core");
 var mock_pokemons_1 = require("./mock-pokemons");
 var router_1 = require("@angular/router");
+var pokemons_service_1 = require("./pokemons.service");
+/* A NE PAS FAIRE : ne pas instancier une nouvelle instance d'un Service dans un composant
+ * par ex., let pokemonsService = new PokemonsService();
+ * Problème 1 : Le composant doit savoir comment créer le Service
+ * Problème 2 : Si le Service était modifié, il fallait retrouver tous les composants qui ont utilisé ce Service
+ * Problème 3 : on ne pourrait pas partager avec des autres composant cette instance unique du Service
+*/
+/* ===================== */
+/* Injecter un service dans le constructor :
+ * Constructor-injection pattern.
+ * Ajouter dans un constructor une propriété "private" --> private pokemonsService: PokemonsService.
+ * Ça injecte dans le Component une instance de PokemonsService.
+ * Cette instance est disponible sous forme de la propriété privée "private pokemonsService",
+ * avec this.pokemonsService on peut accéder aux méthode du PokemonsService.
+ * Cette instance est unique à travers toute l'application.
+ * Si on injecte ce Service dans un autre composant, ça sera la même instance.
+ * Le fait que l'instance du Service est unique permet d'utiliser le Service comme un stockage temporaire des données.
+*/
+/* ===================== */
+/* Ajouter un fournisseur du service avec l'annontation "providers: []"
+*/
 var ListPokemonComponent = /** @class */ (function () {
-    function ListPokemonComponent(router) {
+    function ListPokemonComponent(router, pokemonsService) {
         this.router = router;
+        this.pokemonsService = pokemonsService;
         this.pokemons = null;
     }
     ListPokemonComponent.prototype.ngOnInit = function () {
@@ -32,7 +54,7 @@ var ListPokemonComponent = /** @class */ (function () {
             selector: 'list-pokemon',
             templateUrl: './app/pokemons/list-pokemon.component.html'
         }),
-        __metadata("design:paramtypes", [router_1.Router])
+        __metadata("design:paramtypes", [router_1.Router, pokemons_service_1.PokemonsService])
     ], ListPokemonComponent);
     return ListPokemonComponent;
 }());
