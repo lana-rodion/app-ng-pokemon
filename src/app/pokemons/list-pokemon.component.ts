@@ -42,10 +42,18 @@ export class ListPokemonComponent implements OnInit {
         private router: Router, 
         private pokemonsService: PokemonsService) { }
   
+    // Update après mettre Observable dans PokemonService
+
     ngOnInit(): void {
         //this.pokemons = POKEMONS;
         // On fournit des données depuis le PokemonsService avec sa méthode getPokemons()
-        this.pokemons = this.pokemonsService.getPokemons();
+        this.getPokemons();
+    }
+
+    getPokemons(): void {
+        // getPokemons() envoie un Observable, on subscribe à cet Observable
+        this.pokemonsService.getPokemons()
+            .subscribe(pokemons => this.pokemons = pokemons);
     }
   
     selectPokemon(pokemon: Pokemon): void {
