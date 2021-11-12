@@ -2,12 +2,12 @@
  * Version de SystemJS dédié à la production.
  * Les paquets sont chargés depuis le web.
  */
-(function (global) {
+ (function (global) {
   System.config({
     paths: {
       'npm:': 'https://unpkg.com/' // Le nouvel alias
     },
-
+  
     map: {
       app: 'dist',
       '@angular/core': 'npm:@angular/core@8.0.0/bundles/core.umd.min.js',

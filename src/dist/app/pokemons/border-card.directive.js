@@ -18,7 +18,7 @@ var BorderCardDirective = /** @class */ (function () {
         this.el = el;
         this.initialColor = '#f5f5f5';
         this.defaultColor = '#009688';
-        this.defaultHeight = 180;
+        this.defaultHeight = 200;
         this.setBorder(this.initialColor);
         this.setHeight(this.defaultHeight);
     }
