@@ -61,6 +61,19 @@ export class PokemonsService {
 		);
 	}
 
+	updatePokemon(pokemon: Pokemon): Observable<Pokemon> { 
+		// On déclare headers pour signaler que la requête sera au format JSON
+		const httpOptions = { 
+			headers: new HttpHeaders({'Content-Type': 'application/json'}) 
+		};
+		
+		// La requête Http type PUT
+		return this.http.put(this.pokemonsUrl, pokemon, httpOptions).pipe( 
+			tap(_ => this.log(`updated pokemon id=${pokemon.id}`)),
+			catchError(this.handleError<any>('updatePokemon'))
+		);
+	}
+
   	getPokemonTypes(): Array<string> {
 		return ["Plante","Feu", "Eau", "Insecte", "Normal",
 			"Electrik", "Poison", "Fée", "Vol", "Combat", "Psy",

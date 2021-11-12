@@ -57,6 +57,15 @@ var PokemonsService = /** @class */ (function () {
         } */
         return this.http.get(url).pipe((0, operators_1.tap)(function (_) { return _this.log("fetched pokemon id=" + id); }), (0, operators_1.catchError)(this.handleError("getPokemon id=" + id)));
     };
+    PokemonsService.prototype.updatePokemon = function (pokemon) {
+        var _this = this;
+        // On déclare headers pour signaler que la requête sera au format JSON
+        var httpOptions = {
+            headers: new http_1.HttpHeaders({ 'Content-Type': 'application/json' })
+        };
+        // La requête Http type PUT
+        return this.http.put(this.pokemonsUrl, pokemon, httpOptions).pipe((0, operators_1.tap)(function (_) { return _this.log("updated pokemon id=" + pokemon.id); }), (0, operators_1.catchError)(this.handleError('updatePokemon')));
+    };
     PokemonsService.prototype.getPokemonTypes = function () {
         return ["Plante", "Feu", "Eau", "Insecte", "Normal",
             "Electrik", "Poison", "Fée", "Vol", "Combat", "Psy",
