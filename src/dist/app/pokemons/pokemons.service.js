@@ -27,6 +27,12 @@ var PokemonsService = /** @class */ (function () {
             }
         }
     };
+    PokemonsService.prototype.getPokemonTypes = function () {
+        return [
+            'Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik',
+            'Poison', 'Fée', 'Vol', 'Combat', 'Psy'
+        ];
+    };
     PokemonsService = __decorate([
         (0, core_1.Injectable)()
     ], PokemonsService);

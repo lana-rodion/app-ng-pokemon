@@ -1,5 +1,8 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 import { AppRoutingModule } from './app-routing.module';
 import { PokemonsModule } from './pokemons/pokemons.module';
   
@@ -14,6 +17,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
 @NgModule({
     imports: [
         BrowserModule,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule,
         PokemonsModule, // L'odre de chargement des modules est très important
         AppRoutingModule // pour l'ordre de déclaration des routes !
     ],
