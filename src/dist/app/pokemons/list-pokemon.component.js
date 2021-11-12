@@ -44,10 +44,17 @@ var ListPokemonComponent = /** @class */ (function () {
         this.pokemonsService = pokemonsService;
         this.pokemons = null;
     }
+    // Update après mettre Observable dans PokemonService
     ListPokemonComponent.prototype.ngOnInit = function () {
         //this.pokemons = POKEMONS;
         // On fournit des données depuis le PokemonsService avec sa méthode getPokemons()
-        this.pokemons = this.pokemonsService.getPokemons();
+        this.getPokemons();
+    };
+    ListPokemonComponent.prototype.getPokemons = function () {
+        var _this = this;
+        // getPokemons() envoie un Observable, on subscribe à cet Observable
+        this.pokemonsService.getPokemons()
+            .subscribe(function (pokemons) { return _this.pokemons = pokemons; });
     };
     ListPokemonComponent.prototype.selectPokemon = function (pokemon) {
         console.log('Vous avez selectionné ' + pokemon.name);

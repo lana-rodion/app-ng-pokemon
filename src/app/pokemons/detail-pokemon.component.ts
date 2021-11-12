@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Pokemon } from './pokemon';
-//import { POKEMONS } from './mock-pokemons';
 import { PokemonsService } from './pokemons.service';
 
   
@@ -24,16 +23,11 @@ export class DetailPokemonComponent implements OnInit {
   
     // void = cette méthode n'a pas d'une valeur de retour, elle renvoie rien
     ngOnInit(): void {
-        //this.pokemons = POKEMONS;
         // la propriété snapshot = permet de récupérer de façon synchronne
         // l'exécution du programme est bloquée tant qu'on n'a pas de "id" à afficher 
         let id = +this.route.snapshot.paramMap.get('id');
-        /* for (let i = 0; i < this.pokemons.length; i++) {
-            if (this.pokemons[i].id == id) {
-                this.pokemon = this.pokemons[i];
-            }
-        } */
-        this.pokemon = this.pokemonsService.getPokemon(id);
+        this.pokemonsService.getPokemon(id)
+            .subscribe(pokemon => this.pokemon = pokemon);
     }
     
     // méthode goBack definit la rédirection vers URL ['/pokemons']

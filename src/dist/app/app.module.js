@@ -11,6 +11,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/common/http");
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var in_memory_data_service_1 = require("./in-memory-data.service");
 var app_routing_module_1 = require("./app-routing.module");
 var pokemons_module_1 = require("./pokemons/pokemons.module");
 var app_component_1 = require("./app.component");
@@ -27,7 +28,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 http_1.HttpClientModule,
-                angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule,
+                angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, { dataEncapsulation: false }),
                 pokemons_module_1.PokemonsModule,
                 app_routing_module_1.AppRoutingModule // pour l'ordre de déclaration des routes !
             ],

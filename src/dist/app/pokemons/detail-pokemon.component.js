@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DetailPokemonComponent = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-//import { POKEMONS } from './mock-pokemons';
 var pokemons_service_1 = require("./pokemons.service");
 var DetailPokemonComponent = /** @class */ (function () {
     // private route: le paramètre pour récupérer depuis URL de composant
@@ -27,16 +26,12 @@ var DetailPokemonComponent = /** @class */ (function () {
     }
     // void = cette méthode n'a pas d'une valeur de retour, elle renvoie rien
     DetailPokemonComponent.prototype.ngOnInit = function () {
-        //this.pokemons = POKEMONS;
+        var _this = this;
         // la propriété snapshot = permet de récupérer de façon synchronne
         // l'exécution du programme est bloquée tant qu'on n'a pas de "id" à afficher 
         var id = +this.route.snapshot.paramMap.get('id');
-        /* for (let i = 0; i < this.pokemons.length; i++) {
-            if (this.pokemons[i].id == id) {
-                this.pokemon = this.pokemons[i];
-            }
-        } */
-        this.pokemon = this.pokemonsService.getPokemon(id);
+        this.pokemonsService.getPokemon(id)
+            .subscribe(function (pokemon) { return _this.pokemon = pokemon; });
     };
     // méthode goBack definit la rédirection vers URL ['/pokemons']
     // this.router.navigate(['/pokemons']);
