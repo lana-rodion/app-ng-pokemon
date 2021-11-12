@@ -39,9 +39,10 @@
                 </div>
                 <div class="card-action">
                     <!-- on écoute l'event click pour retourner à la liste de pokemons -->
-                    <a (click)="goBack()">Retour</a>
+                    <a class="waves-effect waves-light btn" (click)="goBack()">Retour</a>
                     <!-- on écoute l'event click pour ouvrir l'édition du profil de pokemon -->
-                    <a (click)="goEdit(pokemon)">Editer</a>
+                    <a class="waves-effect waves-light btn" (click)="goEdit(pokemon)">Editer</a>
+                    <a class="waves-effect waves-light btn btn-outlined__red" (click)="delete(pokemon)">Supprimer</a>
                 </div>
             </div>
         </div>

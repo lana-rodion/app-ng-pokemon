@@ -1,0 +1,17 @@
+.btn {
+    margin-right: 0.5rem;
+}
+
+.btn-outlined__red {
+    background-color: #FFF;
+    border: 1px solid red;
+    color: red;
+    opacity: .7;
+}
+
+.btn-outlined__red:hover {
+    background-color: red;
+    border: 1px solid red;
+    color: #FFF;
+    opacity: 1;
+}

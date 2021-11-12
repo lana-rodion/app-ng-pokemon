@@ -66,6 +66,15 @@ var PokemonsService = /** @class */ (function () {
         // La requête Http type PUT
         return this.http.put(this.pokemonsUrl, pokemon, httpOptions).pipe((0, operators_1.tap)(function (_) { return _this.log("updated pokemon id=" + pokemon.id); }), (0, operators_1.catchError)(this.handleError('updatePokemon')));
     };
+    PokemonsService.prototype.deletePokemon = function (pokemon) {
+        var _this = this;
+        var url = this.pokemonsUrl + "/" + pokemon.id;
+        var httpOptions = {
+            headers: new http_1.HttpHeaders({ 'Content-Type': 'application/json' })
+        };
+        // Requête du type DELETE
+        return this.http.delete(url, httpOptions).pipe((0, operators_1.tap)(function (_) { return _this.log("deleted pokemon id=" + pokemon.id); }), (0, operators_1.catchError)(this.handleError('deletePokemon')));
+    };
     PokemonsService.prototype.getPokemonTypes = function () {
         return ["Plante", "Feu", "Eau", "Insecte", "Normal",
             "Electrik", "Poison", "Fée", "Vol", "Combat", "Psy",
