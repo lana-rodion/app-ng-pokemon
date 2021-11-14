@@ -14,6 +14,9 @@ var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var in_memory_data_service_1 = require("./in-memory-data.service");
 var app_routing_module_1 = require("./app-routing.module");
 var pokemons_module_1 = require("./pokemons/pokemons.module");
+var forms_1 = require("@angular/forms");
+var login_component_1 = require("./login.component");
+var login_routing_module_1 = require("./login-routing.module");
 var app_component_1 = require("./app.component");
 var page_not_found_component_1 = require("./page-not-found.component");
 // Chaque Module a un décorateur @NgModule
@@ -28,12 +31,15 @@ var AppModule = /** @class */ (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 http_1.HttpClientModule,
+                forms_1.FormsModule,
                 angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, { dataEncapsulation: false }),
                 pokemons_module_1.PokemonsModule,
+                login_routing_module_1.LoginRoutingModule,
                 app_routing_module_1.AppRoutingModule // pour l'ordre de déclaration des routes !
             ],
             declarations: [
                 app_component_1.AppComponent,
+                login_component_1.LoginComponent,
                 page_not_found_component_1.PageNotFoundComponent
             ],
             bootstrap: [app_component_1.AppComponent],

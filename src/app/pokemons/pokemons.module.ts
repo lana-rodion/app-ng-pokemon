@@ -14,6 +14,8 @@ import { PokemonFormComponent } from './pokemon-form.component';
 import { PokemonSearchComponent } from './search-pokemon.component';
 import { LoaderComponent } from '../loader.component';
 
+import { AuthGuard } from '../auth-guard.service';
+
 // providers: un tableau de classes 
 // qui permettent de fournir un service au module
   
@@ -34,6 +36,6 @@ import { LoaderComponent } from '../loader.component';
         PokemonTypeColorPipe
     ],
     
-    providers: [PokemonsService]
+    providers: [PokemonsService, AuthGuard]
 })
 export class PokemonsModule { }

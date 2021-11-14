@@ -14,7 +14,7 @@ var page_not_found_component_1 = require("./page-not-found.component");
 // path: '**' pour intercepter toutes les routes non prise en charge par l'application 
 // et les envoyer vers PageNotFoundComponent
 var appRoutes = [
-    { path: '', redirectTo: 'pokemons', pathMatch: 'full' },
+    { path: '', redirectTo: 'pokemon/all', pathMatch: 'full' },
     { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
 ];
 var AppRoutingModule = /** @class */ (function () {
