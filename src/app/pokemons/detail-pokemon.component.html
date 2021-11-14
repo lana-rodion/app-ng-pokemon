@@ -49,4 +49,7 @@
     </div>
 </div>
 <!-- avec *ngIf si le pokemon n'a pas été trouvé et on affiche un message -->
-<h4 *ngIf='!pokemon' class="center">Aucun pokémon à afficher !</h4>
+<!-- <h4 *ngIf='!pokemon' class="center">Aucun pokémon à afficher !</h4> -->
+<h4 *ngIf='!pokemon' class="center">
+    <pkmn-loader></pkmn-loader>
+</h4>
