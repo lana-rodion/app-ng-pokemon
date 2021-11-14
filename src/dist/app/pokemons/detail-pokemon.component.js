@@ -41,7 +41,7 @@ var DetailPokemonComponent = /** @class */ (function () {
     // méthode goBack definit la rédirection vers URL ['/pokemons']
     // this.router.navigate(['/pokemons']);
     DetailPokemonComponent.prototype.goBack = function () {
-        this.router.navigate(['/pokemons']);
+        this.router.navigate(['/pokemon/all']);
     };
     // méthode goEdit definit la rédirection vers URL ['/pokemons/edit/:id']
     DetailPokemonComponent.prototype.goEdit = function (pokemon) {
