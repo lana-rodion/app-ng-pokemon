@@ -22,6 +22,7 @@ var PokemonFormComponent = /** @class */ (function () {
     PokemonFormComponent.prototype.ngOnInit = function () {
         // Initialisation de la propriété types
         this.types = this.pokemonsService.getPokemonTypes();
+        this.isAddForm = this.router.url.includes('add');
     };
     // Détermine si le type passé en paramètres appartient ou non au pokémon en cours d'édition.
     PokemonFormComponent.prototype.hasType = function (type) {
@@ -55,7 +56,18 @@ var PokemonFormComponent = /** @class */ (function () {
     };
     // La méthode appelée lorsque le formulaire est soumis.
     PokemonFormComponent.prototype.onSubmit = function () {
+        var _this = this;
         console.log("Submit form !");
+        /* let link = ['/pokemon', this.pokemon.id];
+        this.router.navigate(link); */
+        /*
+         * La méthode du PokemonService :
+         * updatePokemon(pokemon: Pokemon): Observable<Pokemon> est appelée lorsque le formulaire est soumi
+        */
+        this.pokemonsService.updatePokemon(this.pokemon)
+            .subscribe(function () { return _this.goBack(); });
+    };
+    PokemonFormComponent.prototype.goBack = function () {
         var link = ['/pokemon', this.pokemon.id];
         this.router.navigate(link);
     };

@@ -37,6 +37,7 @@
         "@angular/platform-browser-dynamic": "^12.2.10",
         "@angular/router": "^12.2.10",
         "core-js": "^3.18.3",
+        "materialize-css": "^1.0.0-rc.2",
         "rxjs": "^6.6.7",
         "rxjs-compat": "^6.6.7",
         "systemjs": "^6.10.3",

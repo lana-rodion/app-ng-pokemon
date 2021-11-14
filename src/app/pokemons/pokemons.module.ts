@@ -11,6 +11,8 @@ import { PokemonsService } from './pokemons.service';
 
 import { EditPokemonComponent } from './edit-pokemon.component';
 import { PokemonFormComponent } from './pokemon-form.component';
+import { PokemonSearchComponent } from './search-pokemon.component';
+import { LoaderComponent } from '../loader.component';
 
 // providers: un tableau de classes 
 // qui permettent de fournir un service au module
@@ -26,6 +28,8 @@ import { PokemonFormComponent } from './pokemon-form.component';
         DetailPokemonComponent,
         EditPokemonComponent,
         PokemonFormComponent,
+        PokemonSearchComponent,
+        LoaderComponent,
         BorderCardDirective,
         PokemonTypeColorPipe
     ],

@@ -7,7 +7,7 @@ import { PokemonsService } from './pokemons.service';
 @Component({
     selector: 'detail-pokemon',
     templateUrl: './app/pokemons/detail-pokemon.component.html',
-    //providers: [PokemonsService]
+    styleUrls: ['./app/pokemons/detail-pokemon.component.css']
 })
 export class DetailPokemonComponent implements OnInit {
     // On supprime la liste car on utilisera le PokemonsService pour récupérer tous les pokemons
@@ -28,6 +28,11 @@ export class DetailPokemonComponent implements OnInit {
         let id = +this.route.snapshot.paramMap.get('id');
         this.pokemonsService.getPokemon(id)
             .subscribe(pokemon => this.pokemon = pokemon);
+    }
+
+    delete(pokemon: Pokemon): void { 
+        this.pokemonsService.deletePokemon(pokemon)
+        .subscribe((_) => this.goBack());
     }
     
     // méthode goBack definit la rédirection vers URL ['/pokemons']

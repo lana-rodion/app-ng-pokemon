@@ -33,6 +33,11 @@ var DetailPokemonComponent = /** @class */ (function () {
         this.pokemonsService.getPokemon(id)
             .subscribe(function (pokemon) { return _this.pokemon = pokemon; });
     };
+    DetailPokemonComponent.prototype.delete = function (pokemon) {
+        var _this = this;
+        this.pokemonsService.deletePokemon(pokemon)
+            .subscribe(function (_) { return _this.goBack(); });
+    };
     // méthode goBack definit la rédirection vers URL ['/pokemons']
     // this.router.navigate(['/pokemons']);
     DetailPokemonComponent.prototype.goBack = function () {
@@ -47,7 +52,7 @@ var DetailPokemonComponent = /** @class */ (function () {
         (0, core_1.Component)({
             selector: 'detail-pokemon',
             templateUrl: './app/pokemons/detail-pokemon.component.html',
-            //providers: [PokemonsService]
+            styleUrls: ['./app/pokemons/detail-pokemon.component.css']
         }),
         __metadata("design:paramtypes", [router_1.ActivatedRoute,
             router_1.Router,
