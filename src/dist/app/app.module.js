@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 var core_1 = require("@angular/core");
+// On import le Service Title
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/common/http");
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
@@ -41,6 +42,9 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent,
                 login_component_1.LoginComponent,
                 page_not_found_component_1.PageNotFoundComponent
+            ],
+            providers: [
+                platform_browser_1.Title // On fournit le Service Title
             ],
             bootstrap: [app_component_1.AppComponent],
         })

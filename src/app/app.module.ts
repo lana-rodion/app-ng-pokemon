@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+// On import le Service Title
+import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -34,6 +35,9 @@ import { PageNotFoundComponent } from './page-not-found.component';
         AppComponent,
         LoginComponent,
         PageNotFoundComponent
+    ],
+    providers: [
+        Title // On fournit le Service Title
     ],
     bootstrap: [AppComponent],
 })
