@@ -27,7 +27,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
         HttpClientModule,
         FormsModule,
         HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
-        PokemonsModule, // L'odre de chargement des modules est très important
+        PokemonsModule, // L'ordre de chargement des modules est très important
         LoginRoutingModule,
         AppRoutingModule // pour l'ordre de déclaration des routes !
     ],
